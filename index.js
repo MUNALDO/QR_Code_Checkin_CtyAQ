@@ -33,11 +33,7 @@ mongoose.connection.on('disconnected', () => {
 });
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://fe-qr-project.vercel.app', 'fe-qr-project-uh5f.vercel.app',
-        'https://qr-code-checkin-employee.vercel.app', 'https://qrcodecheckin-d350fcfb1cb9.herokuapp.com',
-        'https://fe-qr-project-uh5f.vercel.app', 'https://qr-code-checkin-employee-eight.vercel.app',
-        'https://qr-code-checkin-employee-eight.vercel.app/login', 'http://localhost:3001',
-        'https://www.checkinnow.de', 'https://www.checkinnow.de/login', 'https://www.cazzy.eu'],
+    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://qrcodectyaq-8e31be181e4d.herokuapp.com'],
     credentials: true,
 }));
 // app.options('*', cors());
