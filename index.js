@@ -33,7 +33,8 @@ mongoose.connection.on('disconnected', () => {
 });
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://qrcodectyaq-8e31be181e4d.herokuapp.com'],
+    origin: ['http://localhost:3000', 'http://localhost:3001',
+        'https://qrcodectyaq-8e31be181e4d.herokuapp.com', 'https://qr-checkin-cty-a-quang.vercel.app'],
     credentials: true,
 }));
 // app.options('*', cors());
