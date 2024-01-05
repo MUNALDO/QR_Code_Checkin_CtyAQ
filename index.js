@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import { SYSTEM_ERROR } from './constant/HttpStatus.js';
-// import myLogger from './winstonLog/winston.js';
 import cors from 'cors';
 import adminRoute from "./routes/admin.js";
 import qrRoute from "./routes/qrCode.js";
