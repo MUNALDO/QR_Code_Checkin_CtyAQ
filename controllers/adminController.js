@@ -942,7 +942,6 @@ export const createAttendance = async (req, res, next) => {
         }
         await employee.save();
 
-        // Calculate total working time in hours
         const totalWorkingTime = totalHours + (totalMinutes / 60);
 
         // Update StatsSchema for the employee
