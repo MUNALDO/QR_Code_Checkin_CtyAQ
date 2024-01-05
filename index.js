@@ -34,7 +34,8 @@ mongoose.connection.on('disconnected', () => {
 
 app.use(cors({
     origin: ['http://localhost:3000', 'http://localhost:3001', 'https://qr-checkin-theta.vercel.app',
-        'https://qrcodectyaq-8e31be181e4d.herokuapp.com', 'https://qr-checkin-cty-a-quang.vercel.app'],
+        'https://qrcodectyaq-8e31be181e4d.herokuapp.com', 'https://qr-checkin-cty-a-quang.vercel.app',
+        'qxotttabcxyz.online', 'www.qxotttabcxyz.online'],
     credentials: true,
 }));
 // app.options('*', cors());
