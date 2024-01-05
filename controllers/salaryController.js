@@ -33,6 +33,7 @@ export const salaryCalculate = async (req, res, next) => {
         year: year,
         month: month
     });
+    if (!stats) return next(createError(NOT_FOUND, "Stats not found!"));
 
     let existSalary = await SalarySchema.findOne({
         employee_id: employeeID,
@@ -41,7 +42,6 @@ export const salaryCalculate = async (req, res, next) => {
         month: month
     });
 
-    // Initialize parameters for calculation
     let a = ensureNumber(req.body.a_new);
     let b = ensureNumber(req.body.b_new);
     let c = ensureNumber(req.body.c_new);
@@ -59,20 +59,17 @@ export const salaryCalculate = async (req, res, next) => {
     if (!req.body.d_new && !existSalary) d = 0;
     if (!req.body.f_new && !existSalary) f = 0;
 
-    // Define the date range for the whole month
     const dateRange = {
         $gte: new Date(year, month - 1, 1, 0, 0, 0, 0),
         $lt: new Date(year, month, 0, 23, 59, 59, 999),
     };
 
-    // Find employee attendance for the specified date range
     const employeeAttendance = await AttendanceSchema.find({
         employee_id: employeeID,
         employee_name: employeeName,
         date: dateRange,
     });
 
-    // Initialize the salary record
     let salaryRecord = {
         employee_id: employee.id,
         employee_name: employee.name,
